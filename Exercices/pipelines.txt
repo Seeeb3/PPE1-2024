@@ -1,0 +1,49 @@
+  759  cat 2016/*/*.ann  | wc -l\n
+  760  cat 2017/*/*.ann  | wc -l\n
+  761  cat 2018/*/*.ann  | wc -l\n
+  762* brew install gedit
+  763  ls
+  764  gedit comptes.txt
+  765  w
+  766  q
+  767  wq
+  768  wq!
+  769  cat 2016/*/*.ann | egrep "Location" | wc
+  770  cat 2017/*/*.ann | egrep "Location" | wc
+  771  cat 2018/*/*.ann | egrep "Location" | wc
+  772  mkdir locations.txt
+  773  mv locations.txt ../
+  774  ls
+  775  gedit Exercices/locations.txt
+  776  ls
+  777  cd ../
+  778  ls
+  779  mv locations.txt ann/
+  780  ls
+  781  cd ann
+  782  ls
+  783  gedit locations.txt
+  784  cat 2016/*/*.ann | egrep "Location" | wc >locations.txt
+  785  gedit locations.txt
+  786  ls
+  787  mv comptes.txt ../
+  788  mv locations.txt ../
+  789  ls
+  790  touch --help
+  791  touch man
+  792  man touch
+  793  touch pipelines.txt
+  794  ls
+  795  mv pipelines.txt ../
+  796  ls
+  797  grep -P "\tLocation" 2016/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 > Exercices/classement_2016.txt
+  798  grep -P "\tLocation" 2016/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 > classement_2016.txt
+  799  egrep -P "\tLocation" 2016/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 > classement_2016.txt
+  800  egrep --help
+  801  egrep "\bLocation\b" 2016/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 > classement_2016.txt
+  802  ls
+  803  egrep "\bLocation\b" 2016/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head 15 > classement_2016.txt
+  804  egrep "\bLocation\b" 2016/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 > classement_2016.txt
+  805  egrep "\bLocation\b" 2017/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 > classement_2017.txt
+  806  egrep "\bLocation\b" 2018/*/*.ann | cut -f 3 | sort | uniq -c | sort -nr | head -n 15 > classement_2018.txt
+  807  mv classem*.txt ../
