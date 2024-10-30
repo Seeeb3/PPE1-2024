@@ -15,3 +15,14 @@ J'avoue pour le script j'ai eu pas mal de problèmes, je sais que j'ai du mal av
 ## Séance 5
 
 Je n'arrive pas à faire autre chose que l'exercice 1 dans les exercices sur les scripts, je vais demander de l'aide à d'autres étudiants 
+
+Je rencontre d'autres problèmes en fait, je n'arrive pas à commit mon rendu mais je n'ai pas les erreurs qu'on a pu voir en cours mais ce genre d'erreur-là : 
+
+```
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+J'ai essayé de voir ce que je pouvais faire avec 'git pull' mais j'ai vraiment peur de faire n'importe quoi pour le coups 
