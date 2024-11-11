@@ -26,3 +26,18 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 J'ai essayé de voir ce que je pouvais faire avec 'git pull' mais j'ai vraiment peur de faire n'importe quoi pour le coups 
+
+## Séance 6
+
+#### Exercice 1 : Pourquoi ne pas utiliser cat ?
+
+On a pas besoin d'utiliser 'cat' parce que quand on utilise 'done < "urls/fr.txt"' il utilise toutes les lignes une par une, donc pas besoin d'utiliser 'cat'.
+
+#### Exercice 2 : Comment transformer "urls/fr.txt" en paramètre du script ?
+
+On peut remplacer "urls/fr.txt" par "$1"
+
+#### Exercice 3 : Comment afficher le numéro de ligne avant chaque URL (sur la même ligne) ?
+
+J'ai utilisé pour ça la fonction counter, j'ai commencé par lui donné une valeur : ``counter=1`` et ensuite utilisé la ligne : 
+``echo -e "${counter}\t${site_name}\t``
