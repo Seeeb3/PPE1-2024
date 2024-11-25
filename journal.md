@@ -41,3 +41,7 @@ On peut remplacer "urls/fr.txt" par "$1"
 
 J'ai utilisé pour ça la fonction counter, j'ai commencé par lui donné une valeur : ``counter=1`` et ensuite utilisé la ligne : 
 ``echo -e "${counter}\t${site_name}\t``
+
+## Séance 8 ?
+
+J'ai eu un peu de mal à refaire le script miniprojet.sh je me suis fais aidé par un ami
