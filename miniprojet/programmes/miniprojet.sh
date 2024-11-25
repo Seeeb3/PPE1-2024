@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-FILENAME=$1
+FICHIER_URLS=$1
 
-if [ ! $FILENAME ]
+if [ ! $FICHIER_URLS ]
 then
-	echo "Merci d'indiquer un fichier d'URLs"
-	exit
+    echo "Merci d'indiquer un fichier d'URLs"
+    exit
 fi
 
-I=0
+INDEX=0
 echo "<!DOCTYPE html>"
 echo "<html>"
 echo "<head>"
@@ -26,27 +26,26 @@ echo "<table class=\"table\" >"
 
 echo "<tr>" "<th>n°</th>" "<th>URL</th>" "<th>Code HTTP</th>" "<th>Encodage</th>" "<th>Nombre de mots</th>" "</tr>"
 
-while read -r line
+while read -r LIGNE_URL
 do
-	# On ajoute à deux reprises xargs pour se débarasser des espaces inutiles
 
-	# Code HTTP
-	HTTP_CODE=$(curl -s -I "$line" | head -n 1 | cut -d ' ' -f 2)
-	# Encodage
-	ENCODING=$(curl -s -I "$line" | egrep -i '^content-type:' | egrep 'charset=[[:alnum:]-]+' | cut -d '=' -f 2 | xargs)
-	# Comptage des mots
-	WORDS_COUNT=$(lynx -dump "$line" | egrep "\b[[:alnum:]]+\b" -o | wc -l | xargs)
+    # Code HTTP
+    CODE_HTTP=$(curl -s -I "$LIGNE_URL" | head -n 1 | cut -d ' ' -f 2)
+    # Encodage
+    ENCODAGE=$(curl -s -I "$LIGNE_URL" | egrep -i '^content-type:' | egrep 'charset=[[:alnum:]-]+' | cut -d '=' -f 2 | xargs)
+    # Comptage des mots
+    NOMBRE_MOTS=$(lynx -dump "$LIGNE_URL" | egrep "\b[[:alnum:]]+\b" -o | wc -l | xargs)
 
-	echo "<tr>"
-	echo "<td>" $I "</td>"
-	echo "<td>" $line "</td>"
-	echo "<td>" $HTTP_CODE "</td>"
-	echo "<td>" $ENCODING "</td>"
-	echo "<td>" $WORDS_COUNT "</td>"
-	echo "</tr>"
+    echo "<tr>"
+    echo "<td>" $INDEX "</td>"
+    echo "<td>" $LIGNE_URL "</td>"
+    echo "<td>" $CODE_HTTP "</td>"
+    echo "<td>" $ENCODAGE "</td>"
+    echo "<td>" $NOMBRE_MOTS "</td>"
+    echo "</tr>"
 
-	((I++))
-done < $FILENAME
+    ((INDEX++))
+done < $FICHIER_URLS
 
 echo "</table>"
 echo "</div>"
